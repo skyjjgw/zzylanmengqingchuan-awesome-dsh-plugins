@@ -54,6 +54,18 @@ GitHub 上已经有不少“大而全”的 DSH 插件目录，例如：
 | [dsh-token-usage](https://github.com/hashdiana/dsh-token-usage) | 把拥挤的 Token 行变成上下文、输入输出、缓存命中率、TTFT 等可读面板 | 📖 源码/README 核验 |
 | [dsh-skills](https://github.com/CocoSgt/dsh-skills) | 汇总项目和 Claude Code 目录中的 Skill，建立 DSH 全局 Skill 库 | 📖 源码/README 核验 |
 
+## 作者自研插件
+
+下面三个插件由本仓库维护者自行开发，并已出现在本机 DSH Web profile 中。这里仍按“本机安装/配置”记录，不把它们扩展成对所有 DSH 版本的兼容保证：
+
+| 插件 | 适合解决的问题 | 核验状态 |
+|---|---|---|
+| [dsh-session-pin](https://github.com/zzylanmengqingchuan/dsh-session-pin) | 给侧边栏会话置顶，重要对话不会被新会话顶下去 | 🧪 本机安装/配置 |
+| [dsh-question-index](https://github.com/zzylanmengqingchuan/dsh-question-index) | 列出当前会话的所有问题，支持搜索、跳转、历史加载和高亮 | 🧪 本机安装/配置 |
+| [dsh-session-rename](https://github.com/zzylanmengqingchuan/dsh-session-rename) | 在对话顶部直接修改会话标题，并同步到侧边栏 | 🧪 本机安装/配置 |
+
+这三个插件都明确避开会话模型、标准模式 / Think / Bash、Agent 执行逻辑和原始消息内容；安装前仍应阅读各自 README 与 patch 文件。
+
 ## 安装前先看这三件事
 
 1. **确认 DSH 版本和运行 Profile。** DeepSeek Harness 仍处在快速迭代阶段；官方 README 明确提醒存在兼容性破坏变更。桌面端自带 runtime 的用户，还要确认插件装进的是桌面端实际使用的 profile，而不是普通 `~/.dsh`。

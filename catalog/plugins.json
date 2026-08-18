@@ -155,6 +155,51 @@
       "caution": "Link mode edits the original source when a skill is edited; explain that boundary before using it on shared skill directories.",
       "source_reviewed": "README, identity modes, architecture and limitations sections",
       "reviewed_on": "2026-08-17"
+    },
+    {
+      "id": "session-pin",
+      "name": "dsh-session-pin",
+      "category": "sessions",
+      "repository": "https://github.com/zzylanmengqingchuan/dsh-session-pin",
+      "package": "dsh-session-pin",
+      "install": "git clone https://github.com/zzylanmengqingchuan/dsh-session-pin && dsh plugin --profile web add ./dsh-session-pin",
+      "license": "MIT (package.json)",
+      "verification": "locally-installed-configured",
+      "compatibility": "当前本机 web profile 已链接并加入 bundle；README 面向 DSH Web，侧边栏识别依赖宿主 React fiber 与 CSS-module 类名，桌面端 runtime 需单独复核。",
+      "why": "给侧边栏会话增加置顶/取消置顶，让重要会话浮到工作区分组顶部；置顶状态保存在浏览器 localStorage。",
+      "caution": "纯浏览器展示层，不改会话 type、标准模式/Think/Bash、模型、Agent 执行逻辑、消息内容或 Host 的持久排序；宿主 UI 内部类名变化可能导致功能失效。",
+      "source_reviewed": "作者公开仓库的 README、README.zh.md、package.json、cordis.patch.yml、lib 源码及本机 web profile",
+      "reviewed_on": "2026-08-18"
+    },
+    {
+      "id": "question-index",
+      "name": "dsh-question-index",
+      "category": "sessions",
+      "repository": "https://github.com/zzylanmengqingchuan/dsh-question-index",
+      "package": "dsh-question-index",
+      "install": "git clone https://github.com/zzylanmengqingchuan/dsh-question-index && dsh plugin --profile web add ./dsh-question-index",
+      "license": "MIT (package.json)",
+      "verification": "locally-installed-configured",
+      "compatibility": "当前本机 web profile 已链接并加入 bundle；README 面向 DSH Web，使用 conversation.session.header.utilities、data-chat-anchor-key 和 loadOlder 等宿主内部契约，升级前需复核。",
+      "why": "在当前会话顶部列出全部用户问题，支持搜索、点击跳转、历史加载和可视区高亮，适合长对话快速回看。",
+      "caution": "不修改对话内容；跳转依赖 ui-conversation 的内部 DOM 契约，宿主版本改名后可能只保留索引而失去跳转能力。",
+      "source_reviewed": "作者公开仓库的 README、README.zh.md、package.json、cordis.patch.yml、lib 源码及本机 web profile",
+      "reviewed_on": "2026-08-18"
+    },
+    {
+      "id": "session-rename",
+      "name": "dsh-session-rename",
+      "category": "sessions",
+      "repository": "https://github.com/zzylanmengqingchuan/dsh-session-rename",
+      "package": "dsh-session-rename",
+      "install": "dsh plugin --profile web add zzylanmengqingchuan/dsh-session-rename",
+      "license": "MIT (package.json)",
+      "verification": "locally-installed-configured",
+      "compatibility": "当前本机 web profile 已链接并加入 bundle；README 面向 DeepSeek Harness Desktop / DSH Web，使用内置 session.rename 契约，需保留 cordis patch 插入层。",
+      "why": "允许直接点击当前对话顶部标题或铅笔按钮重命名会话，并同步到侧边栏；手动命名后不会被自动标题覆盖。",
+      "caution": "只写入会话标题相关的 session/title 日志事件，不触碰会话 type、标准模式/Think/Bash、模型、Agent 执行逻辑或消息内容；标题入口依赖宿主 UI 挂载点。",
+      "source_reviewed": "作者公开仓库的 README、README.zh.md、package.json、cordis.patch.yml、lib 源码及本机 web profile",
+      "reviewed_on": "2026-08-18"
     }
   ]
 }
